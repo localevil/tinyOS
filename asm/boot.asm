@@ -68,26 +68,11 @@ boot2:
 	mov gs,ax
 	mov ss,ax
 
-
-;	mov esi, hello
-;	call print
-;	mov esi, hello
-;	call print
 halt:	mov esp,kernal_stack_top
 	extern kmain
 	call kmain
 	cli
 	hlt
-
-;print:	mov ebx, 0xb8000
-;.loop:	lodsb
-;	or al, al
-;	jz .return 
-;	or eax, 0x0F00
-;	mov word [ebx],ax
-;	add ebx,2
-;	jmp .loop
-;.return: ret
 
 section .bss
 align 4
